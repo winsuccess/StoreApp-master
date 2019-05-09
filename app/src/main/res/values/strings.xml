@@ -26,9 +26,11 @@
     <string name="itemDetailDescription">Sách về tuổi dậy thì</string>
     <string name="addToCart">Thêm vào giỏ hàng</string>
     <string name="order">Đặt hàng</string>
+    <string name="removeorder">Hủy đơn hàng</string>
     <string name="total">Thành tiền: </string>
     <string name="substract">-</string>
     <string name="additive">+</string>
     <string name="title_activity_list_order">ListOrderActivity</string>
     <string name="title_activity_order">OrderActivity</string>
+    <string name="changePassword">Đổi mật khẩu</string>
 </resources>

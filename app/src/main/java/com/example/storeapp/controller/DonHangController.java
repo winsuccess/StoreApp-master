@@ -17,15 +17,15 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class DonHangController {
-
-    public DonHangResponse getDonHangFormServer()
+//cái này là sẽ lấy chi tiết đơn hàng từ server bằng maDonHang
+    public DonHangResponse getDonHangFormServer(String maDonHang)
             throws ExecutionException, InterruptedException {
-        return new GetDonHang().execute("DH0002").get();
+        return new GetDonHang().execute(maDonHang).get();
     }
-
-    public List<DonHang> GetAllDonHangByMaKhachHang()
+//cái này để lấy hết đơn hàng trong cơ sở dữ liệu có mã khách hàng vừa nhập vào đó
+    public List<DonHang> GetAllDonHangByMaKhachHang(String maKhachHang)
             throws ExecutionException, InterruptedException {
-        return new GetAllDonHangByMaKhachHang().execute("KH0001").get();
+        return new GetAllDonHangByMaKhachHang().execute(maKhachHang).get();
     }
 
     public String deleteDonHang̣̣(String maDonHang) throws ExecutionException, InterruptedException {

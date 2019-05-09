@@ -10,6 +10,7 @@ public class GioHangDetail implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String maDonHang;
+    //cái này giống với cái MainActivity.gioHang thôi
     private List<MatHangSoLuong> listMH;
 
     public GioHangDetail() {

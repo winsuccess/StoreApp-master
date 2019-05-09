@@ -1,6 +1,7 @@
 package com.example.storeapp.Activity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,7 +21,7 @@ public class ChangeProfile extends AppCompatActivity {
     SQLiteDatabase db;
     Cursor cursor;
     EditText _edtemail, _edtname, _edtaddress, _edtphone;
-    Button btnChange, btnCancel;
+    Button btnChange, btnCancel, _changePass;
     String id, email, password, name, phone, address;
 
 
@@ -36,6 +37,7 @@ public class ChangeProfile extends AppCompatActivity {
         _edtname = (EditText) findViewById(R.id.edtname);
         _edtaddress = (EditText) findViewById(R.id.edtaddress);
         _edtphone = (EditText) findViewById(R.id.edtphone);
+        _changePass = findViewById(R.id.changePassword);
         SharedPreferences sharedPreferences = getSharedPreferences("my_data", MODE_PRIVATE);
         id = sharedPreferences.getString("id", "");
         findData(id);
@@ -43,7 +45,6 @@ public class ChangeProfile extends AppCompatActivity {
         _edtname.setText(name);
         _edtaddress.setText(address);
         _edtphone.setText(phone);
-
 
         btnChange.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +61,13 @@ public class ChangeProfile extends AppCompatActivity {
                 }else {
                     Toast.makeText(getApplicationContext(), "Nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        _changePass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), CategoryActivity.class));
             }
         });
 

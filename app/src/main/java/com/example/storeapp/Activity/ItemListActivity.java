@@ -96,11 +96,11 @@ public class ItemListActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_homePage) {
-            startActivity(new Intent(this, MainActivity.class));
+
         } else if (id == R.id.nav_category) {
             startActivity(new Intent(this, CategoryActivity.class));
         } else if (id == R.id.nav_orderManagement) {
-
+            startActivity(new Intent(this, ListOrderActivity.class));
         } else if (id == R.id.nav_accountManagement) {
 
         }

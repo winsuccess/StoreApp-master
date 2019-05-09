@@ -71,6 +71,26 @@ public class MatHangController {
         }
     }
 
+    public static void main(String[] args) {
+        MatHangController matHangController = new MatHangController();
+
+        MatHangRequest mhRequest = new MatHangRequest("",0,"0");
+        MatHangResponse mhResponse= new MatHangResponse();
+        try {
+            mhResponse = matHangController.getBanChay(mhRequest);
+        } catch (Exception e) {
+        }
+        if(mhResponse!=null) {
+            int i = 5;
+            while(i>0)
+            {
+
+                System.out.println("WRONG");
+                i--;
+            }
+        }
+    }
+
 
 
 }

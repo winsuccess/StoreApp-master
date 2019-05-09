@@ -97,7 +97,7 @@ public class CartActivity extends AppCompatActivity {
                             DonHangRequest donHangRequest = new DonHangRequest();
                             donHangRequest.setGioHangDetail(new GioHangDetail("",MainActivity.gioHang));
                             donHangRequest.setTongTien(tongTienGioHang);
-                            donHangRequest.setMaKhachHang("KH0001");
+                            donHangRequest.setMaKhachHang(Login.maKhachHang);
                             try {
                                 donHangResponse = donHangController.createDonHang(donHangRequest);
                             } catch (ExecutionException e) {
@@ -148,8 +148,6 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private void AnhXa() {
-
-
         tongTien = findViewById(R.id.txTongTien);
         recyclerView = (RecyclerView) findViewById(R.id.cart_recyclerView);
         thanhToan = findViewById(R.id.btThanhToan);

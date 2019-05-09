@@ -9,7 +9,9 @@ import java.io.Serializable;
 public class DonHangResponse implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    //có đủ đơn hàng này
     private DonHang donHang;
+    //giỏ hàng này. trong này có 1 cái là maDOnHang nhưng kệ nó đi. cái đấy ko dùng đén. ông get cái matHangSoLuong là đc thôi
     private GioHangDetail gioHangDetail;
     private String message;
 

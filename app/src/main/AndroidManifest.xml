@@ -15,11 +15,11 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Activity.OrderActivity"
-            android:label="@string/title_activity_order"
+            android:label="Xem đơn hàng"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Activity.ListOrderActivity"
-            android:label="@string/title_activity_list_order"
+            android:label="Danh sách đơn hàng"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activity.Login"

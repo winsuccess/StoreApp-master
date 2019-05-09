@@ -37,16 +37,17 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/buttondangnhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ĐĂNG NHẬP" />
+
+        <Button
             android:id="@+id/buttondangky"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
             android:text="ĐĂNG KÝ" />
 
-        <Button
-            android:id="@+id/buttondangnhap"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ĐĂNG NHẬP" />
     </LinearLayout>
 </LinearLayout>

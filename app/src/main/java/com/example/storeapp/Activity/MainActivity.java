@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity
     private ItemListAdapter mAdapter1;
     private RecyclerView recyclerView2;
     private ItemListAdapter mAdapter2;
-
+//ok không.thắng?? sửa xong chưa?  xong rồi. vừa nãy ông đánh chữ dài như vậy cũng đủ làm luôn xong rồi. tôi ko biêt chơi cái adapter
     public static List<MatHangSoLuong> gioHang;
 
     @Override
@@ -114,9 +114,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_category) {
             startActivity(new Intent(this, CategoryActivity.class));
         } else if (id == R.id.nav_orderManagement) {
-
+            startActivity(new Intent(this, ListOrderActivity.class));
         } else if (id == R.id.nav_accountManagement) {
-
+            startActivity(new Intent(this, ChangeProfile.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

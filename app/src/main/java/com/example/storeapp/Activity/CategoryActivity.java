@@ -33,9 +33,6 @@ public class CategoryActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        LinearLayout phoneCategoryView = findViewById(R.id.phoneCategoryView);
-        LinearLayout computerCategoryView = findViewById(R.id.computerCategoryView);
-        LinearLayout householdCategoryView = findViewById(R.id.householdCategoryView);
 
         Intent intent = getIntent();
         String category = intent.getStringExtra("danhmuc");
@@ -82,7 +79,7 @@ public class CategoryActivity extends AppCompatActivity
         } else if (id == R.id.nav_category) {
 
         } else if (id == R.id.nav_orderManagement) {
-
+            startActivity(new Intent(this, ListOrderActivity.class));
         } else if (id == R.id.nav_accountManagement) {
 
         }

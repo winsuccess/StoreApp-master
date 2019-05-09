@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/listorder_item"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/list_order_item"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/border"
         android:orientation="vertical"
-        android:padding="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:padding="15dp">
+
         <TextView
             android:id="@+id/list_order_id"
-            android:text="Mã Đơn hàng"
-            android:textSize="25sp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Mã Đơn hàng"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/list_order_time"
@@ -25,12 +23,13 @@
             android:layout_height="wrap_content"
             android:text="Ngày đặt"
             android:textSize="25sp" />
+
         <TextView
             android:id="@+id/list_order_price"
-            android:text="Tổng tiền"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Tổng tiền"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
-
-
-</android.support.constraint.ConstraintLayout>

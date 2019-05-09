@@ -1,8 +1,11 @@
 package com.example.storeapp.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,9 +17,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.storeapp.R;
+import com.example.storeapp.controller.DonHangController;
+import com.example.storeapp.controller.ItemListAdapter;
+import com.example.storeapp.controller.OrderListAdapter;
+import com.example.storeapp.model.DonHang;
+import com.example.storeapp.model.MatHang;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class ListOrderActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private List<DonHang> orderList = new ArrayList<>();
+    private RecyclerView recyclerView;
+    private OrderListAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +48,15 @@ public class ListOrderActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        prepareOrderList();
+
+        recyclerView = (RecyclerView) findViewById(R.id.list_order_recyclerView);
+        mAdapter = new OrderListAdapter(orderList,this);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setAdapter(mAdapter);
+
     }
 
     @Override
@@ -47,7 +72,7 @@ public class ListOrderActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.list_order, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -59,10 +84,8 @@ public class ListOrderActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
+        if (id == R.id.action_cart)
+            startActivity(new Intent(this, CartActivity.class));
         return super.onOptionsItemSelected(item);
     }
 
@@ -72,8 +95,39 @@ public class ListOrderActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        if (id == R.id.nav_homePage) {
+            startActivity(new Intent(this, MainActivity.class));
+        } else if (id == R.id.nav_category) {
+            startActivity(new Intent(this, CategoryActivity.class));
+        } else if (id == R.id.nav_orderManagement) {
+
+        } else if (id == R.id.nav_accountManagement) {
+            startActivity(new Intent(this, ChangeProfile.class));
+        }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void prepareOrderList(){
+        DonHangController donHangController = new DonHangController();
+
+        List<DonHang> donHangs = new ArrayList<>();
+
+        try {
+            donHangs = donHangController.GetAllDonHangByMaKhachHang(Login.maKhachHang);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        if(donHangs!=null) {
+            for(DonHang dh: donHangs)
+            {
+                orderList.add(dh);
+            }
+        }
+        //mAdapter.notifyDataSetChanged();
     }
 }

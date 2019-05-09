@@ -20,6 +20,7 @@ public class Login extends AppCompatActivity {
     Cursor cursor;
     Button btnLogin, btnReg;
     EditText _edtemail, _edtpassword;
+    public static String maKhachHang;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +51,7 @@ public class Login extends AppCompatActivity {
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         String id = cursor.getString(0);
                         editor.putString("id", id);
+                        maKhachHang = id;
                         editor.commit();
                         Toast.makeText(getApplicationContext(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(Login.this, MainActivity.class);
