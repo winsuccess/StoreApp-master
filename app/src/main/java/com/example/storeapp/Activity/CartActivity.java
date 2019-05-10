@@ -96,6 +96,7 @@ public class CartActivity extends AppCompatActivity {
                         public void onClick(View v) {
                             DonHangRequest donHangRequest = new DonHangRequest();
                             donHangRequest.setGioHangDetail(new GioHangDetail("",MainActivity.gioHang));
+                            donHangRequest.setDiaChiGiaoHang(diaChi.getText().toString());
                             donHangRequest.setTongTien(tongTienGioHang);
                             donHangRequest.setMaKhachHang(Login.maKhachHang);
                             try {

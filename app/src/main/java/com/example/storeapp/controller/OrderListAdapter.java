@@ -39,6 +39,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.MyVi
     public void onBindViewHolder(MyViewHolder holder, int position) {
         final DonHang dh = orderList.get(position);
         holder.orderId.setText("Mã đơn hàng: "+dh.getMaDonHang());
+        holder.orderAddress.setText("Địa chỉ giao hàng: "+dh.getDiaChiGiaoHang());
         final DecimalFormat format = new DecimalFormat("###,###,###,###");
         holder.orderTotal.setText("Tổng tiền: "+format.format(dh.getTongTien())+" VND");
         final SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
@@ -48,6 +49,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.MyVi
             public void onClick(View v) {
                 Intent intent = new Intent(context, OrderActivity.class);
                 intent.putExtra("maDonHang",dh.getMaDonHang());
+                intent.putExtra("diaChi","Địa chỉ đặt hàng: "+dh.getDiaChiGiaoHang());
                 intent.putExtra("ngayDat","Ngày đặt hàng: "+sdf.format(dh.getNgayTao()));
                 intent.putExtra("tongTien","Tổng tiền: "+format.format(dh.getTongTien())+" VND");
                 context.startActivity(intent);
@@ -65,12 +67,14 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.MyVi
         TextView orderId;
         TextView orderDate;
         TextView orderTotal;
+        TextView orderAddress;
         LinearLayout orderLayout;
         public MyViewHolder(View v) {
             super(v);
             orderId =  itemView.findViewById(R.id.list_order_id);
             orderDate = itemView.findViewById(R.id.list_order_time);
             orderTotal = itemView.findViewById(R.id.list_order_price);
+            orderAddress = itemView.findViewById(R.id.list_order_address);
             orderLayout = itemView.findViewById(R.id.list_order_item);
         }
     }

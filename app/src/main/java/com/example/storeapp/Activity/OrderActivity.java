@@ -53,9 +53,11 @@ public class OrderActivity extends AppCompatActivity {
         TextView maDonHangText = findViewById(R.id.order_id);
         TextView tienDonHangText = findViewById(R.id.order_price);
         TextView ngayDonHangText = findViewById(R.id.order_time);
+        TextView diaChiText = findViewById(R.id.order_address);
         maDonHangText.setText("Mã đơn hàng: "+maDonHang);
         tienDonHangText.setText(getIntent().getStringExtra("tongTien"));
         ngayDonHangText.setText(getIntent().getStringExtra("ngayDat"));
+        diaChiText.setText(getIntent().getStringExtra("diaChi"));
 
         prepareItemList(maDonHang);
         recyclerView = (RecyclerView) findViewById(R.id.order_recyclerView);

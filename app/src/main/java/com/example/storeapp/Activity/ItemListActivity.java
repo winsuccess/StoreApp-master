@@ -90,7 +90,6 @@ public class ItemListActivity extends AppCompatActivity
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
-    @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
@@ -102,7 +101,10 @@ public class ItemListActivity extends AppCompatActivity
         } else if (id == R.id.nav_orderManagement) {
             startActivity(new Intent(this, ListOrderActivity.class));
         } else if (id == R.id.nav_accountManagement) {
-
+            startActivity(new Intent(this, ChangeProfile.class));
+        }
+        else if (id == R.id.btnLogout){
+            startActivity(new Intent(this, Login.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

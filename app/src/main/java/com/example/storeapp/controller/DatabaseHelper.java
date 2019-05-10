@@ -1,4 +1,4 @@
-package com.example.storeapp.Activity;
+package com.example.storeapp.controller;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

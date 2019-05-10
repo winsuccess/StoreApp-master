@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.storeapp.R;
+import com.example.storeapp.controller.DatabaseHelper;
 
 public class FormRegister extends AppCompatActivity {
     SQLiteOpenHelper openHelper;

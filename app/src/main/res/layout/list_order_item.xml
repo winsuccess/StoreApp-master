@@ -24,7 +24,15 @@
             android:text="Ngày đặt"
             android:textSize="25sp" />
 
-        <TextView
+    <TextView
+        android:id="@+id/list_order_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:text="Địa chỉ"
+        android:textSize="22sp" />
+
+    <TextView
             android:id="@+id/list_order_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

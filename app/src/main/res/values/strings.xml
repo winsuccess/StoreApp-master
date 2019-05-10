@@ -33,4 +33,5 @@
     <string name="title_activity_list_order">ListOrderActivity</string>
     <string name="title_activity_order">OrderActivity</string>
     <string name="changePassword">Đổi mật khẩu</string>
+    <string name="logout">Đăng xuất</string>
 </resources>
